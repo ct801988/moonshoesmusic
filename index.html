@@ -4,31 +4,31 @@
 <title>Moonshoes</title>
 
 <style>
+
 body{
-background:black;
-color:white;
-font-family:Arial, sans-serif;
-text-align:center;
 margin:0;
-padding:0;
+background:black;
+overflow:hidden;
+font-family:Arial, sans-serif;
+color:white;
 }
 
-.container{
-margin-top:100px;
+/* CENTER LOGO */
+.center{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+text-align:center;
+z-index:2;
 }
 
-h1{
-font-size:70px;
-letter-spacing:10px;
+.center img{
+width:600px;
+max-width:90vw;
 }
 
-img{
-margin-top:40px;
-width:300px;
-border-radius:10px;
-box-shadow:0 0 30px rgba(255,255,255,0.2);
-}
-
+/* LINKS */
 .links{
 margin-top:30px;
 }
@@ -36,44 +36,79 @@ margin-top:30px;
 .links a{
 color:white;
 text-decoration:none;
-margin:20px;
-font-size:18px;
-opacity:0.8;
+margin:15px;
+font-size:16px;
+opacity:0.7;
+transition:0.3s;
 }
 
 .links a:hover{
 opacity:1;
 }
 
-.footer{
-margin-top:80px;
-font-size:14px;
-opacity:0.5;
+/* ORBIT RING */
+.orbit{
+position:absolute;
+top:50%;
+left:50%;
+width:800px;
+height:800px;
+border-radius:50%;
+transform:translate(-50%, -50%);
+border:1px solid rgba(255,255,255,0.08);
+animation:rotate 120s linear infinite;
 }
-</style>
 
+.orbit::before{
+content:"";
+position:absolute;
+width:6px;
+height:6px;
+background:white;
+border-radius:50%;
+top:-3px;
+left:50%;
+transform:translateX(-50%);
+box-shadow:0 0 10px white;
+}
+
+/* SUBTLE GLOW FIELD */
+.glow{
+position:absolute;
+top:50%;
+left:50%;
+width:1200px;
+height:1200px;
+transform:translate(-50%, -50%);
+background:radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+filter:blur(60px);
+z-index:0;
+}
+
+/* ANIMATION */
+@keyframes rotate{
+from{transform:translate(-50%, -50%) rotate(0deg);}
+to{transform:translate(-50%, -50%) rotate(360deg);}
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="glow"></div>
 
-<h1>MOONSHOES</h1>
+<div class="orbit"></div>
 
-<p>Moonshoes & Marionettes</p>
-
-<img src="https://via.placeholder.com/300" alt="Album Cover">
+<div class="center">
+<img src="moonshoes-logo.png">
 
 <div class="links">
 <a href="#">Spotify</a>
+<a href="#">Apple Music</a>
 <a href="#">YouTube</a>
 <a href="#">Instagram</a>
 </div>
-
-<div class="footer">
-<p>A Thompson Soundworks Production</p>
-</div>
-
 </div>
 
 </body>
