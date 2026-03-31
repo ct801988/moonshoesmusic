@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Moonshoes</title>
+
+<style>
+
+body{
+margin:0;
+background:black;
+color:white;
+font-family:Arial, sans-serif;
+overflow:hidden;
+}
+
+/* CENTER CONTENT */
+.center{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+text-align:center;
+}
+
+/* LOGO */
+.center img{
+width:75vw;
+max-width:1400px;
+height:auto;
+
+/* subtle movement instead of full spin */
+animation:float 6s ease-in-out infinite;
+}
+
+/* LINKS */
+.links{
+margin-top:30px;
+}
+
+.links a{
+color:white;
+text-decoration:none;
+margin:12px;
+letter-spacing:1px;
+font-size:16px;
+opacity:0.7;
+transition:0.3s;
+}
+
+.links a:hover{
+opacity:1;
+}
+
+/* SUBTLE FLOAT (this is key) */
+@keyframes float{
+0% { transform: translateY(0px); }
+50% { transform: translateY(-8px); }
+100% { transform: translateY(0px); }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="center">
+
+<img src="moonshoes-logo.png">
+
+<div class="links">
+<a href="#">YouTube</a>
+<a href="#">Spotify</a>
+<a href="#">Apple Music</a>
+<a href="#">Instagram</a>
+<a href="#">TikTok</a>
+</div>
+
+</div>
+
+</body>
+</html>
