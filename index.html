@@ -3,6 +3,8 @@
 <head>
 <title>Moonshoes</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 
 body{
@@ -12,28 +14,17 @@ overflow:hidden;
 font-family:Arial, sans-serif;
 color:white;
 
-/* FULL SCREEN IMAGE */
+/* DESKTOP BACKGROUND */
 background: url('moonshoes-logo.png') no-repeat center center;
 background-size: cover;
 }
 
-/* DARK OVERLAY (makes text readable + cinematic feel) */
-.overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.35);
-}
-
-/* LINKS */
+/* LINKS (BOTTOM CENTER) */
 .links{
 position:absolute;
 bottom:60px;
 width:100%;
 text-align:center;
-z-index:2;
 }
 
 .links a{
@@ -48,14 +39,34 @@ transition:0.3s;
 
 .links a:hover{
 opacity:1;
+text-shadow:0 0 8px rgba(255,255,255,0.6);
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+
+body{
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
+background-color: black;
+}
+
+.links{
+bottom:30px;
+}
+
+.links a{
+font-size:14px;
+margin:10px;
+}
+
 }
 
 </style>
 </head>
 
 <body>
-
-<div class="overlay"></div>
 
 <div class="links">
 <a href="#">YouTube</a>
