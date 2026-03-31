@@ -20,13 +20,16 @@ top:50%;
 left:50%;
 transform:translate(-50%, -50%);
 text-align:center;
-z-index:2;
 }
 
+/* LOGO */
 .center img{
-width:80vw;
-max-width:1200px;
+width:75vw;
+max-width:1400px;
 height:auto;
+
+/* subtle movement instead of full spin */
+animation:float 6s ease-in-out infinite;
 }
 
 /* LINKS */
@@ -48,46 +51,17 @@ transition:0.3s;
 opacity:1;
 }
 
-/* ORBIT RING */
-.orbit{
-position:absolute;
-top:50%;
-left:50%;
-width:800px;
-height:800px;
-border-radius:50%;
-border:1px solid rgba(255,255,255,0.08);
-transform:translate(-50%, -50%);
-animation:spin 140s linear infinite;
-}
-
-/* GLOW BACKGROUND */
-.glow{
-position:absolute;
-top:50%;
-left:50%;
-width:1200px;
-height:1200px;
-transform:translate(-50%, -50%);
-background:radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
-filter:blur(80px);
-z-index:0;
-}
-
-/* ANIMATION */
-@keyframes spin{
-from{transform:translate(-50%, -50%) rotate(0deg);}
-to{transform:translate(-50%, -50%) rotate(360deg);}
+/* SUBTLE FLOAT (this is key) */
+@keyframes float{
+0% { transform: translateY(0px); }
+50% { transform: translateY(-8px); }
+100% { transform: translateY(0px); }
 }
 
 </style>
 </head>
 
 <body>
-
-<div class="glow"></div>
-
-<div class="orbit"></div>
 
 <div class="center">
 
