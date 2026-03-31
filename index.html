@@ -7,43 +7,42 @@
 
 body{
 margin:0;
-background:black;
-color:white;
-font-family:Arial, sans-serif;
+height:100vh;
 overflow:hidden;
+font-family:Arial, sans-serif;
+color:white;
+
+/* FULL SCREEN IMAGE */
+background: url('moonshoes-logo.png') no-repeat center center;
+background-size: cover;
 }
 
-/* CENTER CONTENT */
-.center{
+/* DARK OVERLAY (makes text readable + cinematic feel) */
+.overlay{
 position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%, -50%);
-text-align:center;
-}
-
-/* LOGO */
-.center img{
-width:75vw;
-max-width:1400px;
-height:auto;
-
-/* subtle movement instead of full spin */
-animation:float 6s ease-in-out infinite;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.35);
 }
 
 /* LINKS */
 .links{
-margin-top:30px;
+position:absolute;
+bottom:60px;
+width:100%;
+text-align:center;
+z-index:2;
 }
 
 .links a{
 color:white;
 text-decoration:none;
-margin:12px;
-letter-spacing:1px;
+margin:15px;
 font-size:16px;
-opacity:0.7;
+letter-spacing:1px;
+opacity:0.8;
 transition:0.3s;
 }
 
@@ -51,21 +50,12 @@ transition:0.3s;
 opacity:1;
 }
 
-/* SUBTLE FLOAT (this is key) */
-@keyframes float{
-0% { transform: translateY(0px); }
-50% { transform: translateY(-8px); }
-100% { transform: translateY(0px); }
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="center">
-
-<img src="moonshoes-logo.png">
+<div class="overlay"></div>
 
 <div class="links">
 <a href="#">YouTube</a>
@@ -73,8 +63,6 @@ opacity:1;
 <a href="#">Apple Music</a>
 <a href="#">Instagram</a>
 <a href="#">TikTok</a>
-</div>
-
 </div>
 
 </body>
