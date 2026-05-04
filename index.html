@@ -1,148 +1,208 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Moonshoes</title>
+  <title>Moonshoes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html{
+      scroll-behavior:smooth;
+    }
 
-<style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#000;
+      color:#fff;
+      overflow-x:hidden;
+    }
 
-html{
-scroll-behavior:smooth;
-}
+    /* ===== HERO ===== */
+    .hero{
+      min-height:100vh;
+      min-height:100svh;
+      background:#000;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px 16px 28px;
+      box-sizing:border-box;
+    }
 
-body{
-margin:0;
-font-family:Arial, sans-serif;
-color:white;
-overflow-x:hidden;
-}
+    .hero-inner{
+      width:100%;
+      max-width:1800px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:18px;
+    }
 
-/* ===== HERO ===== */
-.hero{
-height:100vh;
-background: url('moonshoes-logo.png') no-repeat center center;
-background-size: cover;
-position:relative;
-display:flex;
-flex-direction:column;
-justify-content:flex-end;
-align-items:center;
-}
+    .hero-logo{
+      display:block;
+      width:min(94vw, 1700px);
+      max-height:72vh;
+      object-fit:contain;
+    }
 
-/* LINKS (DESKTOP) */
-.links{
-position:absolute;
-bottom:40px;
-width:100%;
-text-align:center;
-}
+    /* ===== LINKS ===== */
+    .links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+      gap:10px 12px;
+      width:100%;
+    }
 
-.links a{
-color:white;
-text-decoration:none;
-margin:12px;
-font-size:15px;
-opacity:0.8;
-}
+    .links a{
+      color:#fff;
+      text-decoration:none;
+      opacity:0.88;
+      transition:0.25s ease;
+    }
 
-/* ===== VIDEO ===== */
-.video-section{
-height:100vh;
-background:black;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
+    .links a:hover{
+      opacity:1;
+    }
 
-.video-section h2{
-margin-bottom:20px;
-letter-spacing:2px;
-}
+    /* ===== VIDEO SECTION ===== */
+    .video-section{
+      background:#000;
+      padding:36px 18px 48px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      text-align:center;
+      box-sizing:border-box;
+    }
 
-.video-container{
-width:80%;
-max-width:800px;
-aspect-ratio:16/9;
-}
+    .video-section h2{
+      margin:0 0 18px;
+      font-size:30px;
+      letter-spacing:1.5px;
+      font-weight:700;
+    }
 
-.video-container iframe{
-width:100%;
-height:100%;
-}
+    .video-container{
+      width:min(90vw, 900px);
+      aspect-ratio:16 / 9;
+    }
 
-/* ===== MOBILE FIX ===== */
-@media (max-width:768px){
+    .video-container iframe{
+      width:100%;
+      height:100%;
+      border:0;
+    }
 
-.hero{
-height:auto;
-min-height:75vh; /* 🔥 reduced height = pulls links up */
+    /* ===== DESKTOP ===== */
+    @media (min-width: 769px){
 
-background-size:contain;
-background-repeat:no-repeat;
-background-color:black;
-background-position:center 22%;
+      .hero{
+        padding:20px 24px 34px;
+      }
 
-/* 🔥 THIS controls spacing under logo */
-padding-top:20px;
-}
+      .hero-inner{
+        gap:16px;
+      }
 
-/* 🔥 LINKS NOW SIT JUST UNDER LOGO */
-.links{
-position:static;
-margin-top:8px; /* tighter under logo */
+      .hero-logo{
+        width:min(95vw, 1800px);
+        max-height:76vh;
+      }
 
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:8px;
-}
+      .links a{
+        font-size:15px;
+        margin:0 4px;
+      }
 
-.links a{
-font-size:13px;
-margin:0;
-}
+      .video-section{
+        min-height:100vh;
+        justify-content:center;
+        padding:40px 24px 56px;
+      }
 
-/* 🔥 SPACE AFTER LINKS (NOT BEFORE) */
-.video-section{
-height:auto;
-padding:50px 15px 40px; /* pushes video DOWN slightly */
-}
+      .video-section h2{
+        font-size:24px;
+        margin-bottom:20px;
+      }
+    }
 
-.video-section h2{
-margin-bottom:10px;
-}
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px){
 
-}
+      .hero{
+        padding:18px 14px 20px;
+      }
 
-</style>
+      .hero-inner{
+        gap:14px;
+      }
+
+      .hero-logo{
+        width:94vw;
+        max-height:54vh;
+      }
+
+      .links{
+        max-width:340px;
+        gap:8px;
+      }
+
+      .links a{
+        font-size:12px;
+        line-height:1;
+        padding:8px 10px;
+        border-radius:999px;
+        background:rgba(255,255,255,0.08);
+        border:1px solid rgba(255,255,255,0.14);
+        backdrop-filter:blur(3px);
+      }
+
+      .video-section{
+        padding:20px 14px 36px;
+      }
+
+      .video-section h2{
+        font-size:18px;
+        margin-bottom:14px;
+      }
+
+      .video-container{
+        width:92vw;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<section class="hero">
+  <section class="hero">
+    <div class="hero-inner">
+      <img src="moonshoes-logo.png" alt="Moonshoes" class="hero-logo">
 
-<div class="links">
-<a href="https://www.youtube.com/@moonshoesmusic" target="_blank">YouTube</a>
-<a href="https://open.spotify.com/artist/3p0NtW15t7tw3GrRLcbaYE" target="_blank">Spotify</a>
-<a href="https://music.apple.com/us/artist/moonshoes/1894727751" target="_blank">Apple Music</a>
-<a href="https://www.instagram.com/moonshoes.music" target="_blank">Instagram</a>
-<a href="https://www.tiktok.com/@moonshoesmusic" target="_blank">TikTok</a>
-</div>
+      <div class="links">
+        <a href="https://www.youtube.com/@moonshoesmusic" target="_blank">YouTube</a>
+        <a href="https://open.spotify.com/artist/3p0NtW15t7tw3GrRLcbaYE" target="_blank">Spotify</a>
+        <a href="https://music.apple.com/us/artist/moonshoes/1894727751" target="_blank">Apple Music</a>
+        <a href="https://www.instagram.com/moonshoes.music" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@moonshoesmusic" target="_blank">TikTok</a>
+      </div>
+    </div>
+  </section>
 
-</section>
+  <section class="video-section">
+    <h2>Homesick for the Future</h2>
 
-<section class="video-section">
-
-<h2>Homesick for the Future</h2>
-
-<div class="video-container">
-<iframe src="https://www.youtube.com/embed/sIIRFZJw9Ro" frameborder="0" allowfullscreen></iframe>
-</div>
-
-</section>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/sIIRFZJw9Ro"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
 
 </body>
 </html>
