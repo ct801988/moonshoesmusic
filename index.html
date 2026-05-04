@@ -76,31 +76,28 @@ height:100%;
 /* ===== MOBILE FIX ===== */
 @media (max-width:768px){
 
-/* 🔥 CENTER LOGO AGAIN */
+/* 🔥 BACK TO BEST POSITION */
 .hero{
-height:auto; /* key fix for spacing */
-min-height:100vh;
+height:auto;
+min-height:90vh; /* slightly less than full screen */
 
 background-size:contain;
 background-repeat:no-repeat;
 background-color:black;
-background-position:center center;
 
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+/* 🔥 THIS is the sweet spot you liked */
+background-position:center 22%;
 }
 
-/* 🔥 LINKS UNDER LOGO */
+/* LINKS under logo */
 .links{
 position:static;
-margin-top:15px;
+margin-top:10px;
 
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
-gap:10px;
+gap:8px;
 }
 
 .links a{
@@ -108,10 +105,14 @@ font-size:13px;
 margin:0;
 }
 
-/* 🔥 REMOVE HUGE BLACK GAP */
+/* 🔥 TIGHTEN GAP TO VIDEO */
 .video-section{
 height:auto;
-padding:40px 20px;
+padding:20px 15px 40px 15px; /* reduced spacing */
+}
+
+.video-section h2{
+margin-bottom:10px;
 }
 
 }
