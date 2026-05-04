@@ -78,7 +78,7 @@
       background:#000;
       min-height:100vh;
       min-height:100dvh;
-      padding:48px 18px 80px;
+      padding:48px 18px 54px;
       display:flex;
       flex-direction:column;
       align-items:center;
@@ -88,10 +88,11 @@
     }
 
     .video-section h2{
-      margin:0 0 18px;
-      font-size:30px;
-      letter-spacing:1.5px;
+      margin:0 0 22px;
+      font-size:24px;
+      letter-spacing:3px;
       font-weight:700;
+      text-transform:uppercase;
     }
 
     .video-container{
@@ -104,6 +105,16 @@
       width:100%;
       height:100%;
       border:0;
+    }
+
+    .footer{
+      margin-top:38px;
+      font-size:11px;
+      letter-spacing:1px;
+      opacity:0.5;
+      color:white;
+      text-align:center;
+      white-space:normal;
     }
 
     /* ===== DESKTOP ===== */
@@ -129,7 +140,7 @@
 
       .video-section h2{
         font-size:24px;
-        margin-bottom:20px;
+        margin-bottom:22px;
       }
     }
 
@@ -217,17 +228,26 @@
 
       .video-section{
         min-height:100dvh;
-        padding:36px 14px 80px;
+        padding:36px 14px 44px;
         justify-content:center;
       }
 
       .video-section h2{
-        font-size:18px;
-        margin-bottom:14px;
+        font-size:17px;
+        letter-spacing:2.2px;
+        margin-bottom:16px;
       }
 
       .video-container{
         width:92vw;
+      }
+
+      .footer{
+        margin-top:30px;
+        font-size:10px;
+        letter-spacing:0.8px;
+        line-height:1.5;
+        max-width:90vw;
       }
     }
   </style>
@@ -252,13 +272,17 @@
   </section>
 
   <section class="video-section">
-    <h2>Homesick for the Future</h2>
+    <h2>Official Music Videos</h2>
 
     <div class="video-container">
       <iframe
         src="https://www.youtube.com/embed/sIIRFZJw9Ro"
         allowfullscreen>
       </iframe>
+    </div>
+
+    <div class="footer">
+      Moonshoes · A Thompson Soundworks Project · © 2026 Chad Thompson
     </div>
   </section>
 
