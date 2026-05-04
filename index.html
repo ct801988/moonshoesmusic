@@ -109,12 +109,21 @@
       width:100%;
       margin-top:auto;
       padding-top:32px;
+      padding-bottom:6px;
       font-size:11px;
       letter-spacing:1px;
       opacity:0.5;
       color:white;
       text-align:center;
       white-space:normal;
+    }
+
+    .footer span{
+      display:inline;
+    }
+
+    .footer-bottom::before{
+      content:" · ";
     }
 
     /* ===== MOBILE ===== */
@@ -231,7 +240,7 @@
 
       .video-section{
         min-height:100dvh;
-        padding:36px 14px 18px;
+        padding:36px 14px 20px;
       }
 
       .video-content{
@@ -241,7 +250,7 @@
       .video-section h2{
         font-size:17px;
         letter-spacing:2.2px;
-        margin-bottom:16px;
+        margin-bottom:24px;
       }
 
       .video-container{
@@ -249,11 +258,20 @@
       }
 
       .footer{
-        padding-top:26px;
+        padding-top:34px;
+        padding-bottom:14px;
         font-size:10px;
         letter-spacing:0.8px;
         line-height:1.5;
         max-width:90vw;
+      }
+
+      .footer span{
+        display:block;
+      }
+
+      .footer-bottom::before{
+        content:"";
       }
     }
   </style>
@@ -303,7 +321,8 @@
     </div>
 
     <div class="footer">
-      Moonshoes · A Thompson Soundworks Project · © 2026 Chad Thompson
+      <span class="footer-top">Moonshoes · A Thompson Soundworks Project</span>
+      <span class="footer-bottom">© 2026 Chad Thompson</span>
     </div>
 
   </section>
