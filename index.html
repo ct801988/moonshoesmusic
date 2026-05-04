@@ -76,23 +76,23 @@ height:100%;
 /* ===== MOBILE FIX ===== */
 @media (max-width:768px){
 
-/* 🔥 BACK TO BEST POSITION */
 .hero{
 height:auto;
-min-height:90vh; /* slightly less than full screen */
+min-height:75vh; /* 🔥 reduced height = pulls links up */
 
 background-size:contain;
 background-repeat:no-repeat;
 background-color:black;
-
-/* 🔥 THIS is the sweet spot you liked */
 background-position:center 22%;
+
+/* 🔥 THIS controls spacing under logo */
+padding-top:20px;
 }
 
-/* LINKS under logo */
+/* 🔥 LINKS NOW SIT JUST UNDER LOGO */
 .links{
 position:static;
-margin-top:10px;
+margin-top:8px; /* tighter under logo */
 
 display:flex;
 justify-content:center;
@@ -105,10 +105,10 @@ font-size:13px;
 margin:0;
 }
 
-/* 🔥 TIGHTEN GAP TO VIDEO */
+/* 🔥 SPACE AFTER LINKS (NOT BEFORE) */
 .video-section{
 height:auto;
-padding:20px 15px 40px 15px; /* reduced spacing */
+padding:50px 15px 40px; /* pushes video DOWN slightly */
 }
 
 .video-section h2{
