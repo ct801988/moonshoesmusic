@@ -195,6 +195,12 @@
         letter-spacing:1.5px;
         text-transform:uppercase;
         opacity:0.55;
+        transition:opacity 0.35s ease;
+        pointer-events:none;
+      }
+
+      .scroll-cue.hide{
+        opacity:0;
       }
 
       .scroll-cue::after{
@@ -242,7 +248,7 @@
       </div>
     </div>
 
-    <div class="scroll-cue">Scroll</div>
+    <div class="scroll-cue" id="scrollCue">Scroll</div>
   </section>
 
   <section class="video-section">
@@ -255,6 +261,18 @@
       </iframe>
     </div>
   </section>
+
+  <script>
+    window.addEventListener("scroll", function() {
+      const cue = document.getElementById("scrollCue");
+
+      if (window.scrollY > 20) {
+        cue.classList.add("hide");
+      } else {
+        cue.classList.remove("hide");
+      }
+    });
+  </script>
 
 </body>
 </html>
