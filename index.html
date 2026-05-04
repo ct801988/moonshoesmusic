@@ -9,17 +9,20 @@
 
 body{
 margin:0;
-min-height:200vh; /* allows scroll */
 font-family:Arial, sans-serif;
 color:white;
-
-/* BACKGROUND */
-background: url('moonshoes-logo.png') no-repeat center center;
-background-size: cover;
-background-attachment: fixed;
+overflow-x:hidden;
 }
 
-/* LINKS */
+/* ===== SECTION 1 (LANDING) ===== */
+.hero{
+height:100vh;
+background: url('moonshoes-logo.png') no-repeat center center;
+background-size: cover;
+position:relative;
+}
+
+/* LINKS stay on landing page */
 .links{
 position:absolute;
 bottom:60px;
@@ -42,15 +45,40 @@ opacity:1;
 text-shadow:0 0 8px rgba(255,255,255,0.6);
 }
 
-/* MOBILE FIX */
-@media (max-width: 768px) {
+/* ===== SECTION 2 (VIDEO) ===== */
+.video-section{
+height:100vh;
+background:black;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
 
-body{
+.video-section h2{
+margin-bottom:20px;
+letter-spacing:2px;
+}
+
+.video-container{
+width:80%;
+max-width:800px;
+aspect-ratio:16/9;
+}
+
+.video-container iframe{
+width:100%;
+height:100%;
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px){
+
+.hero{
 background-size: contain;
-background-position: center;
 background-repeat: no-repeat;
-background-color: black;
-background-attachment: scroll;
+background-color:black;
 }
 
 .links{
@@ -68,38 +96,13 @@ margin:0;
 
 }
 
-/* SECOND SECTION */
-.video-section{
-height:100dvh;
-background:black;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
-
-.video-section h2{
-margin-bottom:20px;
-letter-spacing:2px;
-}
-
-/* VIDEO */
-.video-container{
-width:80%;
-max-width:800px;
-aspect-ratio:16/9;
-}
-
-.video-container iframe{
-width:100%;
-height:100%;
-}
-
 </style>
 </head>
 
 <body>
+
+<!-- SECTION 1 -->
+<section class="hero">
 
 <div class="links">
 <a href="https://www.youtube.com/@moonshoesmusic" target="_blank">YouTube</a>
@@ -109,6 +112,9 @@ height:100%;
 <a href="https://www.tiktok.com/@moonshoesmusic" target="_blank">TikTok</a>
 </div>
 
+</section>
+
+<!-- SECTION 2 -->
 <section class="video-section">
 
 <h2>Homesick for the Future</h2>
