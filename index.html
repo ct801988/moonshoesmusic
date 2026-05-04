@@ -22,51 +22,44 @@
     .hero{
       min-height:100vh;
       min-height:100dvh;
-      background:#000;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px 16px 28px;
-      box-sizing:border-box;
+      background:#000 url('moonshoes-logo.png') no-repeat center center;
+      background-size:cover;
       position:relative;
+      box-sizing:border-box;
     }
 
     .hero-inner{
-      width:100%;
-      max-width:1800px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      gap:18px;
+      display:none;
     }
 
     .hero-logo{
-      display:block;
-      width:min(94vw, 1700px);
-      max-height:72vh;
-      object-fit:contain;
+      display:none;
     }
 
     /* ===== LINKS ===== */
     .links{
+      position:absolute;
+      bottom:60px;
+      left:0;
+      width:100%;
       display:flex;
-      flex-wrap:wrap;
       justify-content:center;
       align-items:center;
-      gap:10px 12px;
-      width:100%;
+      gap:28px;
     }
 
     .links a{
       color:#fff;
       text-decoration:none;
-      opacity:0.88;
+      font-size:15px;
+      opacity:0.82;
       transition:0.25s ease;
+      white-space:nowrap;
     }
 
     .links a:hover{
       opacity:1;
+      text-shadow:0 0 8px rgba(255,255,255,0.55);
     }
 
     .scroll-cue{
@@ -117,57 +110,44 @@
       white-space:normal;
     }
 
-    /* ===== DESKTOP ===== */
-    @media (min-width: 769px){
-
-      .hero{
-        padding:20px 24px 34px;
-      }
-
-      .hero-inner{
-        gap:16px;
-      }
-
-      .hero-logo{
-        width:min(95vw, 1800px);
-        max-height:76vh;
-      }
-
-      .links a{
-        font-size:15px;
-        margin:0 4px;
-      }
-
-      .video-section h2{
-        font-size:24px;
-        margin-bottom:22px;
-      }
-    }
-
     /* ===== MOBILE ===== */
     @media (max-width: 768px){
 
       .hero{
         min-height:100dvh;
+        background:none;
+        background-color:#000;
+        display:flex;
+        align-items:center;
+        justify-content:center;
         padding:18px 14px 46px;
       }
 
       .hero-inner{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
         gap:14px;
         transform:translateY(-18px);
       }
 
       .hero-logo{
+        display:block;
         width:94vw;
         max-height:50vh;
+        object-fit:contain;
       }
 
       .links{
+        position:static;
         display:flex;
         flex-wrap:wrap;
         justify-content:center;
         gap:8px;
         max-width:290px;
+        width:100%;
       }
 
       .links a{
@@ -179,13 +159,6 @@
         border:1px solid rgba(255,255,255,0.14);
         backdrop-filter:blur(3px);
         white-space:nowrap;
-      }
-
-      /* Forces clean centered 3 + 2 layout */
-      .links a:nth-child(1),
-      .links a:nth-child(2),
-      .links a:nth-child(3){
-        flex:0 0 auto;
       }
 
       .links a:nth-child(4){
@@ -266,6 +239,14 @@
         <a href="https://www.instagram.com/moonshoes.music" target="_blank">Instagram</a>
         <a href="https://www.tiktok.com/@moonshoesmusic" target="_blank">TikTok</a>
       </div>
+    </div>
+
+    <div class="links desktop-links">
+      <a href="https://www.youtube.com/@moonshoesmusic" target="_blank">YouTube</a>
+      <a href="https://open.spotify.com/artist/3p0NtW15t7tw3GrRLcbaYE" target="_blank">Spotify</a>
+      <a href="https://music.apple.com/us/artist/moonshoes/1894727751" target="_blank">Apple Music</a>
+      <a href="https://www.instagram.com/moonshoes.music" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@moonshoesmusic" target="_blank">TikTok</a>
     </div>
 
     <div class="scroll-cue" id="scrollCue">Scroll</div>
