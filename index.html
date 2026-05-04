@@ -24,9 +24,13 @@ height:100vh;
 background: url('moonshoes-logo.png') no-repeat center center;
 background-size: cover;
 position:relative;
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+align-items:center;
 }
 
-/* LINKS */
+/* LINKS (DESKTOP) */
 .links{
 position:absolute;
 bottom:40px;
@@ -42,7 +46,7 @@ font-size:15px;
 opacity:0.8;
 }
 
-/* ===== VIDEO SECTION ===== */
+/* ===== VIDEO ===== */
 .video-section{
 height:100vh;
 background:black;
@@ -76,19 +80,21 @@ height:100%;
 background-size:contain;
 background-repeat:no-repeat;
 background-color:black;
-
-/* 🔥 MOVE LOGO UP (this is the ONLY change we needed) */
 background-position:center 20%;
+
+/* 🔥 CHANGE LAYOUT CONTROL */
+justify-content:center;
 }
 
-/* KEEP LINKS VISIBLE */
+/* 🔥 LINKS NOW SIT UNDER LOGO */
 .links{
-bottom:20px;
+position:static;
+margin-top:20px;
+
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
 gap:10px;
-padding:0 10px;
 }
 
 .links a{
@@ -103,7 +109,6 @@ margin:0;
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
 
 <div class="links">
@@ -116,7 +121,6 @@ margin:0;
 
 </section>
 
-<!-- VIDEO -->
 <section class="video-section">
 
 <h2>Homesick for the Future</h2>
