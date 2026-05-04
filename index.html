@@ -18,7 +18,7 @@
       overflow-x:hidden;
     }
 
-    /* ===== HERO ===== */
+    /* ===== HERO / DESKTOP LANDING ===== */
     .hero{
       min-height:100vh;
       min-height:100dvh;
@@ -28,16 +28,13 @@
       box-sizing:border-box;
     }
 
-    .hero-inner{
+    /* mobile-only content hidden on desktop */
+    .mobile-hero-inner{
       display:none;
     }
 
-    .hero-logo{
-      display:none;
-    }
-
-    /* ===== LINKS ===== */
-    .links{
+    /* desktop links */
+    .desktop-links{
       position:absolute;
       bottom:60px;
       left:0;
@@ -48,7 +45,7 @@
       gap:28px;
     }
 
-    .links a{
+    .desktop-links a{
       color:#fff;
       text-decoration:none;
       font-size:15px;
@@ -57,7 +54,7 @@
       white-space:nowrap;
     }
 
-    .links a:hover{
+    .desktop-links a:hover{
       opacity:1;
       text-shadow:0 0 8px rgba(255,255,255,0.55);
     }
@@ -71,13 +68,21 @@
       background:#000;
       min-height:100vh;
       min-height:100dvh;
-      padding:48px 18px 54px;
+      padding:48px 18px 24px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      box-sizing:border-box;
+    }
+
+    .video-content{
+      width:100%;
+      margin:auto 0;
       display:flex;
       flex-direction:column;
       align-items:center;
       justify-content:center;
-      text-align:center;
-      box-sizing:border-box;
     }
 
     .video-section h2{
@@ -101,7 +106,9 @@
     }
 
     .footer{
-      margin-top:38px;
+      width:100%;
+      margin-top:auto;
+      padding-top:32px;
       font-size:11px;
       letter-spacing:1px;
       opacity:0.5;
@@ -113,17 +120,23 @@
     /* ===== MOBILE ===== */
     @media (max-width: 768px){
 
+      /* remove desktop background behavior on mobile */
       .hero{
         min-height:100dvh;
-        background:none;
-        background-color:#000;
+        background:#000;
         display:flex;
         align-items:center;
         justify-content:center;
         padding:18px 14px 46px;
       }
 
-      .hero-inner{
+      /* hide desktop links completely on mobile */
+      .desktop-links{
+        display:none;
+      }
+
+      /* show mobile logo + pill links */
+      .mobile-hero-inner{
         width:100%;
         display:flex;
         flex-direction:column;
@@ -133,24 +146,26 @@
         transform:translateY(-18px);
       }
 
-      .hero-logo{
+      .mobile-logo{
         display:block;
         width:94vw;
         max-height:50vh;
         object-fit:contain;
       }
 
-      .links{
-        position:static;
-        display:flex;
-        flex-wrap:wrap;
+      .mobile-links{
+        display:grid;
+        grid-template-columns:repeat(6, auto);
         justify-content:center;
+        align-items:center;
         gap:8px;
-        max-width:290px;
+        max-width:320px;
         width:100%;
       }
 
-      .links a{
+      .mobile-links a{
+        color:#fff;
+        text-decoration:none;
         font-size:11px;
         line-height:1;
         padding:8px 10px;
@@ -159,14 +174,29 @@
         border:1px solid rgba(255,255,255,0.14);
         backdrop-filter:blur(3px);
         white-space:nowrap;
+        opacity:0.88;
       }
 
-      .links a:nth-child(4){
-        margin-left:34px;
+      /* top row: 3 centered pills */
+      .mobile-links a:nth-child(1){
+        grid-column:1 / span 2;
       }
 
-      .links a:nth-child(5){
-        margin-right:34px;
+      .mobile-links a:nth-child(2){
+        grid-column:3 / span 2;
+      }
+
+      .mobile-links a:nth-child(3){
+        grid-column:5 / span 2;
+      }
+
+      /* second row: 2 centered pills */
+      .mobile-links a:nth-child(4){
+        grid-column:2 / span 2;
+      }
+
+      .mobile-links a:nth-child(5){
+        grid-column:4 / span 2;
       }
 
       .scroll-cue{
@@ -201,8 +231,11 @@
 
       .video-section{
         min-height:100dvh;
-        padding:36px 14px 44px;
-        justify-content:center;
+        padding:36px 14px 18px;
+      }
+
+      .video-content{
+        margin:auto 0;
       }
 
       .video-section h2{
@@ -216,7 +249,7 @@
       }
 
       .footer{
-        margin-top:30px;
+        padding-top:26px;
         font-size:10px;
         letter-spacing:0.8px;
         line-height:1.5;
@@ -229,10 +262,12 @@
 <body>
 
   <section class="hero">
-    <div class="hero-inner">
-      <img src="moonshoes-logo.png" alt="Moonshoes" class="hero-logo">
 
-      <div class="links">
+    <!-- MOBILE LOGO + PILLS -->
+    <div class="mobile-hero-inner">
+      <img src="moonshoes-logo.png" alt="Moonshoes" class="mobile-logo">
+
+      <div class="mobile-links">
         <a href="https://www.youtube.com/@moonshoesmusic" target="_blank">YouTube</a>
         <a href="https://open.spotify.com/artist/3p0NtW15t7tw3GrRLcbaYE" target="_blank">Spotify</a>
         <a href="https://music.apple.com/us/artist/moonshoes/1894727751" target="_blank">Apple Music</a>
@@ -241,7 +276,8 @@
       </div>
     </div>
 
-    <div class="links desktop-links">
+    <!-- DESKTOP LINKS ONLY -->
+    <div class="desktop-links">
       <a href="https://www.youtube.com/@moonshoesmusic" target="_blank">YouTube</a>
       <a href="https://open.spotify.com/artist/3p0NtW15t7tw3GrRLcbaYE" target="_blank">Spotify</a>
       <a href="https://music.apple.com/us/artist/moonshoes/1894727751" target="_blank">Apple Music</a>
@@ -250,21 +286,26 @@
     </div>
 
     <div class="scroll-cue" id="scrollCue">Scroll</div>
+
   </section>
 
   <section class="video-section">
-    <h2>Official Music Videos</h2>
 
-    <div class="video-container">
-      <iframe
-        src="https://www.youtube.com/embed/sIIRFZJw9Ro"
-        allowfullscreen>
-      </iframe>
+    <div class="video-content">
+      <h2>Official Music Videos</h2>
+
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/sIIRFZJw9Ro"
+          allowfullscreen>
+        </iframe>
+      </div>
     </div>
 
     <div class="footer">
       Moonshoes · A Thompson Soundworks Project · © 2026 Chad Thompson
     </div>
+
   </section>
 
   <script>
