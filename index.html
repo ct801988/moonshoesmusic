@@ -91,11 +91,12 @@
       text-transform:uppercase;
     }
 
+    /* 2 x 2 DESKTOP VIDEO GRID */
     .video-grid{
-      width:min(94vw, 1300px);
+      width:min(92vw, 1100px);
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:24px;
+      grid-template-columns:repeat(2, 1fr);
+      gap:36px 28px;
       align-items:start;
       justify-items:center;
     }
@@ -278,6 +279,7 @@
         text-align:center;
       }
 
+      /* STACK VIDEOS VERTICALLY ON MOBILE */
       .video-grid{
         width:100%;
         max-width:420px;
@@ -363,10 +365,22 @@
   <section class="video-section">
 
     <div class="video-content">
+
       <h2>Official Music Videos</h2>
 
       <div class="video-grid">
 
+        <!-- 1. TOP LEFT -->
+        <div class="video-card">
+          <iframe
+            src="https://www.youtube.com/embed/yq1t8xVD9GM"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+          <p>Coastline Love Affair</p>
+        </div>
+
+        <!-- 2. TOP RIGHT -->
         <div class="video-card">
           <iframe
             src="https://www.youtube.com/embed/_jgEsWZkuW4"
@@ -376,6 +390,7 @@
           <p>Moonshoes and Marionettes</p>
         </div>
 
+        <!-- 3. BOTTOM LEFT -->
         <div class="video-card">
           <iframe
             src="https://www.youtube.com/embed/ZGmdoEzIpj8"
@@ -385,6 +400,7 @@
           <p>Millionaires in Make Believe</p>
         </div>
 
+        <!-- 4. BOTTOM RIGHT -->
         <div class="video-card">
           <iframe
             src="https://www.youtube.com/embed/sIIRFZJw9Ro"
@@ -395,6 +411,7 @@
         </div>
 
       </div>
+
     </div>
 
     <div class="footer">
