@@ -91,7 +91,7 @@
       text-transform:uppercase;
     }
 
-    /* 2 x 2 DESKTOP VIDEO GRID */
+    /* 2-COLUMN DESKTOP VIDEO GRID */
     .video-grid{
       width:min(92vw, 1100px);
       display:grid;
@@ -124,6 +124,13 @@
       opacity:0.78;
       line-height:1.4;
       text-align:center;
+    }
+
+    /* Center the fifth video underneath the 2x2 block */
+    .video-card.center-card{
+      grid-column:1 / -1;
+      width:calc((100% - 28px) / 2);
+      justify-self:center;
     }
 
     .footer{
@@ -279,6 +286,7 @@
         text-align:center;
       }
 
+      /* STACK ALL VIDEOS VERTICALLY ON MOBILE */
       .video-grid{
         width:100%;
         max-width:420px;
@@ -290,7 +298,8 @@
         margin:0 auto;
       }
 
-      .video-card{
+      .video-card,
+      .video-card.center-card{
         width:100%;
         max-width:390px;
         align-items:center;
@@ -379,7 +388,7 @@
           <p>Coastline Love Affair</p>
         </div>
 
-        <!-- 2. TOP RIGHT - UPDATED 4K VIDEO -->
+        <!-- 2. TOP RIGHT -->
         <div class="video-card">
           <iframe
             src="https://www.youtube.com/embed/SHwItvth4SM"
@@ -389,7 +398,17 @@
           <p>Moonshoes and Marionettes</p>
         </div>
 
-        <!-- 3. BOTTOM LEFT - UPDATED 4K VIDEO -->
+        <!-- 3. BOTTOM LEFT -->
+        <div class="video-card">
+          <iframe
+            src="https://www.youtube.com/embed/sSN-GWsNNg4"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+          <p>Don't Be Scared Daddy</p>
+        </div>
+
+        <!-- 4. BOTTOM RIGHT -->
         <div class="video-card">
           <iframe
             src="https://www.youtube.com/embed/_yszD95Iu-c"
@@ -399,8 +418,8 @@
           <p>Millionaires in Make Believe</p>
         </div>
 
-        <!-- 4. BOTTOM RIGHT -->
-        <div class="video-card">
+        <!-- 5. CENTERED BELOW -->
+        <div class="video-card center-card">
           <iframe
             src="https://www.youtube.com/embed/sIIRFZJw9Ro"
             loading="lazy"
